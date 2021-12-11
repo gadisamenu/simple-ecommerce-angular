@@ -1,0 +1,48 @@
+<form id="formr"  #f=ngForm>
+    <div class="mb-3">
+        <label for="productname" class="form-label">Name</label>
+        <input type="text" class="form-control" minlenght=4 name="productname" ngModel #name='ngModel' required>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors?.['required']">
+                Name is required.
+            </div>
+            <div *ngIf="name.errors?.['minlength']">
+                Name must be at least 4 characters long.
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="productprice" class="form-label">Price</label>
+        <input type="number" class="form-control" name="productprice" ngModel #price="ngModel" required>
+        <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
+            <div *ngIf="price.errors != null">
+                <div *ngIf="price.errors['required']">
+                    Price is required.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="imageUrl" class="form-label">Image Directory</label>
+        <input type="url" class="form-control" name="imageUrl" ngModel #image="ngModel">
+        <div *ngIf="image.invalid && (image.dirty || image.touched)" class="alert alert-danger">
+            <div *ngIf="image.errors != null">
+                <div *ngIf="image.errors['type']">
+                    Invalid input
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <input type="text" class="form-control" name="description" ngModel #description="ngModel" required>
+        <div *ngIf="description.invalid && (description.dirty || description.touched)" class="alert alert-danger">
+            <div *ngIf="description.errors != null">
+                <div *ngIf="description.errors['required']">
+                    Price is required.
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid" (click)="AddProduct(f)">Submit</button>
+</form>

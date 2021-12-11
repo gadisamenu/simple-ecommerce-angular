@@ -1,0 +1,21 @@
+#container{
+    display: flex;
+    position:absolute;
+    left: 10rem;
+    flex-wrap: wrap;
+}
+.card {
+    margin: 1rem;
+    background-color: rgb(107, 170, 170);
+}
+#btn {
+    display: flex;
+    margin: 0.5rem;
+    /* width: 50%; */
+}
+.add {
+    position: relative;
+    top:90%;
+    height: 20%;
+    
+}

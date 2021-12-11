@@ -1,0 +1,15 @@
+<div id="container">
+    <div class="card" *ngFor="let customer of customerlist" style="width: 18rem;">
+        <div>
+            <h5 class="card-title">Name={{customer.name | uppercase}}</h5>
+            <h5 class="card-price">Email={{customer.email}}$</h5>
+            <p class="card-text">Age={{customer.age}}</p>
+            <p class="card-text">Gender={{customer.sex}}</p>
+        </div>
+        <div id="btn">
+            <button class="btn btn-primary" [routerLink]="['customer/details/' + customer.id]">View Details</button>
+            <button type="button" (click)="deletethis(customer.id)">Delete</button>
+        </div>
+    </div>
+</div>
+<button class= 'add' [routerLink]="['customer/adding/']" >Add</button>

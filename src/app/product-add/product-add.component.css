@@ -1,0 +1,59 @@
+#container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 1em 0.5em;
+    background-color: rgb(148, 197, 201);
+    box-shadow: 0.7rem 10px 50px rgb(86, 112, 112);
+    border-radius: 2rem;
+    /* height: auto; */
+    width: 20rem;
+}
+
+.card a {
+    border: 0.1em solid;
+    background-color: seagreen;
+}
+
+.card-body {
+    border-top: 0.25rem solid rgb(96, 151, 137)
+}
+
+.card img {
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    max-height: 10rem;
+}
+
+
+
+.card-price {
+    text-decoration: none;
+}
+
+.card-button {
+    background-color: rgb(70, 127, 180);
+    border-radius: 0.5rem;
+}
+
+#formr {
+    padding:1rem;
+    border:1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 80%;
+
+}
+
+input {
+    max-width: 50%;
+    justify-content: center;
+} 

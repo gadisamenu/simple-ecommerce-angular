@@ -1,0 +1,63 @@
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    background-color: rgb(136, 182, 194);
+    margin: 1rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    align-content: center;
+}
+
+h5 {
+    /* color: darkgreen; */
+    padding: 0.5rem;
+}
+
+button {
+    background-color: blue;
+    color: black;
+    margin: 0.5rem;
+}
+
+input {
+    width: 70%;
+    margin: 0.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto; 
+    align-items: center;
+    border: 1px solid black;
+    justify-content: center;
+    padding: 2rem;
+    width: 70%;
+    
+} 
+
+
+#btns {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+
+/* #forming{
+    padding:1rem;
+    border:1px solid black;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 80%;
+
+} */
+/* select {
+    width: 50%;
+} */

@@ -1,0 +1,28 @@
+ul {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(86, 152, 156);
+}
+
+* a {
+    color: rgb(106, 8, 151);
+
+}
+
+a :hover {
+    text-decoration-line: underline;
+}
+
+.logo-img {
+    position: absolute;
+    left: 1rem;
+    width: 7rem;
+    border:1px solid gray;
+    border-radius: 50%;
+    background-color: rgb(175, 230, 222);
+}
+/* body{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(129, 173, 173);
+} */

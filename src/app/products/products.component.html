@@ -1,0 +1,24 @@
+<form class="form-inline my-2 my-lg-0" #s=ngForm>
+  <input class="form-control mr-sm-2" type="search" name='value' placeholder="Search" ngModel #search='ngModel'
+    aria-label="Search" onchange="this.form.submit()">
+</form>
+<div class='container'>
+  <div *ngFor="let product of productList">
+    <div *ngIf="product.name.includes(s.value['value'] | uppercase)">
+      <div class='card' style="width:18rem;">
+        <img [src]="product.imageUrl" alt="card image">
+        <div class='card-body'>
+          <h5 class='card-title'>{{product.name | uppercase}}</h5>
+          <p class='card-price' *ngIf="product.price < 50; else elseBlock" style="color: red;">
+            Price=${{product.price}}(*On
+            Discount)</p>
+          <ng-template #elseBlock>Price=${{product.price}}</ng-template>
+          <p class="card-description">{{product.description}}</p>
+          <button class="card-button" [routerLink]="['product/details/' + product.id]">View Details</button>
+          <button class="card-button" (click)="delete(product.id)">Deleted</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<button id= "add" class="card-button" [routerLink]="['product/add']">Add Product</button>

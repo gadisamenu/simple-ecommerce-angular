@@ -1,0 +1,42 @@
+<div id="container">
+    <div class="card" *ngIf="selected_pro != undefined" width:18rem>
+        <img class="card-img-top" [src]="selected_pro.imageUrl" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{selected_pro.name | uppercase}}</h5>
+            <h5 class="card-price"></h5>
+            <p class="card-text" *ngIf="selected_pro.price < 10; else elseBlock" style="color:red"> $
+                {{selected_pro.price}}(*On Discount)</p>
+            <ng-template #elseBlock>price=${{selected_pro.price}}</ng-template>
+            <p class="card-text">{{selected_pro.description}}</p>
+        </div>
+    </div>
+</div>
+<form id="formr" *ngIf="selected_pro != undefined" (ngSubmit)="updateProduct(f)" #f=ngForm>
+    <div class="mb-3">
+        <label for="productname" class="form-label">Name</label>
+        <input type="text" class="form-control" minlenght=4 name="productname" ngModel #name='ngModel'
+            placeholder={{selected_pro.name}} required>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors?.['required']">
+                Name is required.
+            </div>
+            <div *ngIf="name.errors?.['minlength']">
+                Name must be at least 4 characters long.
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="productprice" class="form-label">Price</label>
+        <input type="number" class="form-control" name="productprice" ngModel #price="ngModel"
+            placeholder={{selected_pro.price}} required>
+        <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger">
+            <div *ngIf="price.errors != null">
+                <div *ngIf="price.errors['required']">
+                    Price is required.
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
